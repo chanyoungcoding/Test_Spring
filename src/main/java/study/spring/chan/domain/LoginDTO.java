@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class UserDTO {
-  private String userName;
-  private int age;
+public class LoginDTO {
+  private String id;
+  private String password;
 }
