@@ -8,7 +8,7 @@
     <h1>모두의 유저</h1>
 
     <div>
-        <form action="/user/create" method="post">
+        <form method="post">
             <label for="username">사용자이름 : </label>
             <input type="text" id="username" name="username" required/><br/>
             <label for="age">나이 : </label>
@@ -17,11 +17,10 @@
         </form>
     </div>
 
-    <ul>
-        <li>유저 이름 : <span th:text="${user.name}">이름</span></li>
-        <li>유저 나이 : <span th:text="${user.age}">나이</span></li>
+    <ul th:each="user : ${users}">
+        <li th:href="@{/user/(username=${user.username})}" th:text="${user.username}">유저이름</li>
+        <li th:text="${user.age}">유저나이</li>
     </ul>
-
 
     <div th:if="${error}">
         <p th:text="${error}" style="color: red;"></p>

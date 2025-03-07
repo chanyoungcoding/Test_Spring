@@ -10,5 +10,17 @@
     <li>유저 이름 : <span th:text="${user.name}">이름</span></li>
     <li>유저 나이 : <span th:text="${user.age}">나이</span></li>
 </ul>
+<div>
+    <form th:action="@{/user/(username=${user.name}, age=${user.age})}" method="post">
+        <input type="hidden" name="_method" value="PUT" />
+        <button type="submit">업데이트</button>
+    </form>
+</div>
+<div>
+    <form th:action="@{/user/(username=${user.name})}" method="post">
+        <input type="hidden" name="_method" value="DELETE" />
+        <button type="submit">삭제</button>
+    </form>
+</div>
 </body>
 </html>
