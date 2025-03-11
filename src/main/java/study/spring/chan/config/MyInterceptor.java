@@ -1,4 +1,4 @@
-package study.spring.chan;
+package study.spring.chan.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
